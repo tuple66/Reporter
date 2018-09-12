@@ -32,7 +32,14 @@
                             <outlet property="delegate" destination="Zlb-z8-rNh" id="ilD-Lh-YNg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Reporter" id="xtT-Rb-67L"/>
+                    <navigationItem key="navigationItem" title="Reporter" id="xtT-Rb-67L">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="suT-Al-HQd">
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="AddNewClientPressed:" destination="Zlb-z8-rNh" id="huO-3Z-duJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkH-oY-Bet" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,7 +53,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o0H-xQ-Cz1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.1229081947" green="0.8131358286" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>

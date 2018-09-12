@@ -35,5 +35,35 @@ class ClientViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    //MARK - Add New Clients
+    
+    @IBAction func AddNewClientPressed(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        
+        
+        let alert = UIAlertController(title: "Add New Client", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add Client", style: .default) { (action) in
+            //Code here for what happens when button presssed
+          
+            if let  textAdded = textField.text {
+                if textAdded != "" {
+                    self.clientArray.append(textAdded)
+                }
+                }
+            self.tableView.reloadData()
+            
+        }
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Create New Client"
+            textField = alertTextField
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
 }
 
