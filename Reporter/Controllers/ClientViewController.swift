@@ -10,7 +10,7 @@ import UIKit
 
 class ClientViewController: UITableViewController {
 
-    var clientArray = ["IFF","Valinge", "British Bakels"]
+    var clientArray = [Client]()
     
     
     override func viewDidLoad() {
