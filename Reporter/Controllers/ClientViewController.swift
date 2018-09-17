@@ -10,7 +10,7 @@ import UIKit
 
 class ClientViewController: UITableViewController {
 
-    var clientArray = [Client]()
+    var clientArray = [String]()
     
     
     override func viewDidLoad() {
@@ -33,6 +33,17 @@ class ClientViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        performSegue(withIdentifier: "showLocation", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! LocationViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedClient = clientArray[indexPath.row]
+            
+        }
     }
     
     //MARK - Add New Clients

@@ -13,6 +13,7 @@
 		55A7912E21485F73001A0E47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A7912D21485F73001A0E47 /* Assets.xcassets */; };
 		55A7913121485F73001A0E47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A7912F21485F73001A0E47 /* LaunchScreen.storyboard */; };
 		55D279DF2149AA28003AA688 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D279DE2149AA28003AA688 /* Client.swift */; };
+		55D279E5214FEB85003AA688 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D279E4214FEB85003AA688 /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		55A7913021485F73001A0E47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55A7913221485F73001A0E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55D279DE2149AA28003AA688 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		55D279E4214FEB85003AA688 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		55A7912521485F73001A0E47 /* Reporter */ = {
 			isa = PBXGroup;
 			children = (
+				55A7913221485F73001A0E47 /* Info.plist */,
 				55D279E22149AAE9003AA688 /* Views */,
 				55D279E12149AACF003AA688 /* Controllers */,
 				55D279E02149AAB6003AA688 /* DataModel */,
@@ -77,6 +80,7 @@
 			children = (
 				55A7912621485F73001A0E47 /* AppDelegate.swift */,
 				55A7912821485F73001A0E47 /* ClientViewController.swift */,
+				55D279E4214FEB85003AA688 /* LocationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -93,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				55A7912D21485F73001A0E47 /* Assets.xcassets */,
-				55A7913221485F73001A0E47 /* Info.plist */,
 				55A7912F21485F73001A0E47 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting FIles";
@@ -174,6 +177,7 @@
 				55A7912921485F73001A0E47 /* ClientViewController.swift in Sources */,
 				55A7912721485F73001A0E47 /* AppDelegate.swift in Sources */,
 				55D279DF2149AA28003AA688 /* Client.swift in Sources */,
+				55D279E5214FEB85003AA688 /* LocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
