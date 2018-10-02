@@ -7,32 +7,41 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ClientViewController: UITableViewController {
 
-    var clientArray = [String]()
+    
+    let realm = try! Realm()
+    
+    var clientArray: Results<Client>?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        load()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return clientArray.count
+        return clientArray?.count ?? 1
         
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClientCell", for: indexPath)
         
-        cell.textLabel?.text = clientArray[indexPath.row]
+        let client = clientArray?[indexPath.row]
+        
+        cell.textLabel?.text = client?.name ?? "No client Added Yet"
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+//        tableView.deselectRow(at: indexPath, animated: true)
         
         performSegue(withIdentifier: "showLocation", sender: self)
     }
@@ -41,7 +50,7 @@ class ClientViewController: UITableViewController {
         let destinationVC = segue.destination as! LocationViewController
         
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.selectedClient = clientArray[indexPath.row]
+            destinationVC.selectedClient = clientArray?[indexPath.row]
             
         }
     }
@@ -58,11 +67,11 @@ class ClientViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Client", style: .default) { (action) in
             //Code here for what happens when button presssed
           
-            if let  textAdded = textField.text {
-                if textAdded != "" {
-                    self.clientArray.append(textAdded)
-                }
-                }
+            let newClient = Client()
+            newClient.name = textField.text!
+            
+            self.saveClients(client: newClient)
+            
             self.tableView.reloadData()
             
         }
@@ -75,6 +84,39 @@ class ClientViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    //MARK - Save Clients
     
-}
+    func saveClients(client: Client) {
+        
+        do {
+            try realm.write {
+                realm.add(client)
+            }
+          } catch {
+            print("Error saving client \(error)")
+            }
+        
+      tableView.reloadData()
+    
+    }
+    
+    
+    //MARK - Load Clients
+    
+    func load () {
+        
+        clientArray = realm.objects(Client.self)
+        tableView.reloadData()
+        
+    }
+    
+    
+        
+        
+    }
+    
+    
+    
+    
+
 

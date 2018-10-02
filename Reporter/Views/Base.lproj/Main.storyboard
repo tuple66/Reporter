@@ -41,40 +41,48 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="RIK-m2-soW" kind="show" identifier="showLocation" id="BzY-vf-ZJ2"/>
+                        <segue destination="fZC-5n-Qms" kind="show" identifier="showLocation" id="BlV-ip-qoy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkH-oY-Bet" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="951" y="134"/>
         </scene>
-        <!--Location View Controller-->
-        <scene sceneID="UuB-zd-NtT">
+        <!--Address-->
+        <scene sceneID="dMf-66-MEI">
             <objects>
-                <tableViewController id="RIK-m2-soW" customClass="LocationViewController" customModule="Reporter" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lQs-en-VAS">
+                <tableViewController id="fZC-5n-Qms" customClass="LocationViewController" customModule="Reporter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gww-fm-RcM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Y09-w5-6md">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" rowHeight="100" id="TI3-IJ-Urs">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y09-w5-6md" id="8kP-29-FHh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TI3-IJ-Urs" id="9GE-HY-8G0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="RIK-m2-soW" id="Yu7-TO-kU0"/>
-                            <outlet property="delegate" destination="RIK-m2-soW" id="0Ce-j6-uJo"/>
+                            <outlet property="dataSource" destination="fZC-5n-Qms" id="etF-oz-vyE"/>
+                            <outlet property="delegate" destination="fZC-5n-Qms" id="haY-m8-8KV"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Address" id="cLZ-Yb-Nm0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="euQ-5g-3xD">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="NewAddressPressed:" destination="fZC-5n-Qms" id="y2A-U8-paz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jxi-xj-Fjk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oAF-5E-lcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1754" y="134"/>
+            <point key="canvasLocation" x="1773.5999999999999" y="124.58770614692655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2iP-Zo-YIL">

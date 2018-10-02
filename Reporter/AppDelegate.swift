@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,19 +17,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    
+        
+        let config =  Realm.Configuration(
+            schemaVersion:2,
+            migrationBlock: {migration, oldSchemaVersion in
+                if (oldSchemaVersion < 1) {
+
+                }
+        }
+        )
+        let realm = try! Realm(configuration:config)
+//        Realm.Configuration.defaultConfiguration = config
         print(Realm.Configuration.defaultConfiguration.fileURL)
         
+//        let client = Data()
+//        let address = Address()
+//        let report = Report()
+//        
+//        client.name = "Bakels"
+//        address.street = "7 Leasowes Road"
+//        address.town = "Evesham"
+//        address.postcode = "WR11 8RQ"
+//        address.country = "England"
+//        
+//        report.contract = 74646
+//        report.equipment = "Dischareg Station"
+//        report.serialNumber = "Y34353"
         
+        //client.address = address
         
         do {
-        let realm = try Realm()
+            let realm = try Realm()
+//            try realm.write {
+//
+//
+//                //realm.add(address)
+//
+//            }
+
         } catch {
-            print ("Error initialising Realm \(error)")
+            print ("Error initialising Realm, \(error)")
         }
-        
-        return true
-    }
+     return true
+  }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Client {
+class Client:Object{
     
-    var name = ""
-    
+   @objc dynamic var name: String = ""
+    let addresses = List<Address>()
     
 }
